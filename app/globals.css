@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 254 254 254;
+    --foreground: 45 55 72;
+    --card: 255 255 255;
+    --card-foreground: 45 55 72;
+    --popover: 255 255 255;
+    --popover-foreground: 45 55 72;
+    --primary: 104 160 133;
+    --primary-foreground: 255 255 255;
+    --secondary: 240 244 241;
+    --secondary-foreground: 74 85 104;
+    --muted: 247 250 252;
+    --muted-foreground: 113 128 150;
+    --accent: 230 243 234;
+    --accent-foreground: 45 55 72;
+    --destructive: 229 62 62;
+    --destructive-foreground: 255 255 255;
+    --border: 230 243 234;
+    --input: 230 243 234;
+    --ring: 104 160 133;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 26 32 26;
+    --foreground: 248 250 252;
+    --card: 32 40 32;
+    --card-foreground: 248 250 252;
+    --popover: 32 40 32;
+    --popover-foreground: 248 250 252;
+    --primary: 104 160 133;
+    --primary-foreground: 255 255 255;
+    --secondary: 45 55 45;
+    --secondary-foreground: 248 250 252;
+    --muted: 45 55 45;
+    --muted-foreground: 156 163 175;
+    --accent: 45 55 45;
+    --accent-foreground: 248 250 252;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 45 55 45;
+    --input: 45 55 45;
+    --ring: 104 160 133;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #fefefe 0%, #f7fafc 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Custom gradient backgrounds */
+.gradient-sage {
+  background: linear-gradient(135deg, #f6f8f6 0%, #e8f0e8 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, #fdfcfb 0%, #f5f1ea 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #e6f3ea 0%, #d1e1d1 100%);
+}
