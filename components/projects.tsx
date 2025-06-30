@@ -9,7 +9,7 @@ export function Projects() {
       title: "High-Performance Web Server",
       description:
         "A lightweight, multi-threaded HTTP server written in C with support for concurrent connections, static file serving, and CGI.",
-      technologies: ["C", "Socket Programming", "Multithreading", "HTTP Protocol"],
+      technologies: ["C#", "Socket Programming", "Multithreading", "HTTP Protocol"],
       github: "#",
       demo: "#",
     },
@@ -17,7 +17,7 @@ export function Projects() {
       title: "Memory Pool Allocator",
       description:
         "Custom memory management system implementing pool allocation for improved performance in memory-intensive applications.",
-      technologies: ["C", "Memory Management", "Data Structures", "Performance Optimization"],
+      technologies: ["C#", "Memory Management", "Data Structures", "Performance Optimization"],
       github: "#",
       demo: "#",
     },
@@ -25,7 +25,7 @@ export function Projects() {
       title: "Database Engine",
       description:
         "A simple relational database engine with B-tree indexing, transaction support, and SQL-like query processing.",
-      technologies: ["C", "B-Trees", "File Systems", "Query Processing"],
+      technologies: ["C#", "B-Trees", "File Systems", "Query Processing"],
       github: "#",
       demo: "#",
     },
@@ -33,7 +33,7 @@ export function Projects() {
       title: "Network Protocol Implementation",
       description:
         "Implementation of a custom network protocol for real-time data transmission with error correction and flow control.",
-      technologies: ["C", "Network Programming", "Protocol Design", "Error Handling"],
+      technologies: ["C#", "Network Programming", "Protocol Design", "Error Handling"],
       github: "#",
       demo: "#",
     },
@@ -41,7 +41,7 @@ export function Projects() {
       title: "Embedded System Controller",
       description:
         "Firmware for an embedded system controller managing sensor data collection and real-time processing.",
-      technologies: ["C", "Embedded Systems", "Real-time Programming", "Hardware Interfaces"],
+      technologies: ["C#", "Embedded Systems", "Real-time Programming", "Hardware Interfaces"],
       github: "#",
       demo: "#",
     },
@@ -49,7 +49,7 @@ export function Projects() {
       title: "Compiler Frontend",
       description:
         "Lexical analyzer and parser for a subset of C language, implementing tokenization and syntax tree generation.",
-      technologies: ["C", "Compiler Design", "Parsing", "Abstract Syntax Trees"],
+      technologies: ["C#", "Compiler Design", "Parsing", "Abstract Syntax Trees"],
       github: "#",
       demo: "#",
     },

@@ -7,7 +7,7 @@ export function Skills() {
       title: "Programming Languages",
       skills: [
         { name: "C", level: 95 },
-        { name: "C++", level: 85 },
+        { name: "C#", level: 85 },
         { name: "Python", level: 75 },
       ],
     },
