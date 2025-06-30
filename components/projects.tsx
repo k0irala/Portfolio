@@ -5,55 +5,57 @@ import { Github, ExternalLink } from "lucide-react"
 
 export function Projects() {
   const projects = [
-    {
-      title: "High-Performance Web Server",
-      description:
-        "A lightweight, multi-threaded HTTP server written in C with support for concurrent connections, static file serving, and CGI.",
-      technologies: ["C#", "Socket Programming", "Multithreading", "HTTP Protocol"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Memory Pool Allocator",
-      description:
-        "Custom memory management system implementing pool allocation for improved performance in memory-intensive applications.",
-      technologies: ["C#", "Memory Management", "Data Structures", "Performance Optimization"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Database Engine",
-      description:
-        "A simple relational database engine with B-tree indexing, transaction support, and SQL-like query processing.",
-      technologies: ["C#", "B-Trees", "File Systems", "Query Processing"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Network Protocol Implementation",
-      description:
-        "Implementation of a custom network protocol for real-time data transmission with error correction and flow control.",
-      technologies: ["C#", "Network Programming", "Protocol Design", "Error Handling"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Embedded System Controller",
-      description:
-        "Firmware for an embedded system controller managing sensor data collection and real-time processing.",
-      technologies: ["C#", "Embedded Systems", "Real-time Programming", "Hardware Interfaces"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Compiler Frontend",
-      description:
-        "Lexical analyzer and parser for a subset of C language, implementing tokenization and syntax tree generation.",
-      technologies: ["C#", "Compiler Design", "Parsing", "Abstract Syntax Trees"],
-      github: "#",
-      demo: "#",
-    },
-  ]
+  {
+    title: "UMS",
+    description:
+      "A .NET Core user management system with JWT authentication, AES encryption, and role-based access for employees and managers.",
+    technologies: ["C#", ".NET Core", "Entity Framework", "JWT", "AES Encryption", "SQL Server"],
+    github: "https://github.com/k0irala/UMS",
+    demo: "#"
+  },
+  {
+    title: "UMS.NET",
+    description:
+      "A refined .NET Core application for user and manager handling with modern MVC patterns, secure token-based authentication, and EF migrations.",
+    technologies: ["C#", ".NET Core", "ASP.NET MVC", "Entity Framework", "JWT"],
+    github: "https://github.com/k0irala/UMS.NET",
+    demo: "#"
+  },
+  {
+    title: "MovieAppAPI",
+    description:
+      "RESTful API backend for a movie application supporting CRUD operations, user registration, and role-based authentication in .NET Core.",
+    technologies: ["C#", ".NET Core", "REST API", "Entity Framework", "JWT"],
+    github: "https://github.com/k0irala/MovieAppAPI",
+    demo: "#"
+  },
+  {
+    title: "MovieAppMVC",
+    description:
+      "A simple yet functional movie app using .NET MVC architecture with user-friendly UI for managing and viewing movies.",
+    technologies: ["C#", ".NET MVC", "Entity Framework"],
+    github: "https://github.com/k0irala/MovieAppMVC",
+    demo: "#"
+  },
+  {
+    title: "UMS-Servlet-",
+    description:
+      "A Java servlet-based user management system demonstrating classic web patterns, authentication, and user CRUD operations.",
+    technologies: ["Java", "Servlets", "JSP", "JDBC"],
+    github: "https://github.com/k0irala/UMS-Servlet-",
+    demo: "#"
+  },
+  {
+    title: "TODO",
+    description:
+      "A simple MERN stack TODO application with user authentication, allowing users to create, read, update, and delete tasks.",
+    technologies: ["JavaScript", "Node.js", "Express", "MongoDB", "React"],
+    github: "https://github.com/k0irala/TODO",
+    demo: "#"
+  }
+]
+
+
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 gradient-accent">
@@ -81,18 +83,22 @@ export function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-2 mt-auto">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 border-sage-300 text-sage-700 hover:bg-sage-50 bg-transparent"
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
                   >
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button size="sm" className="flex-1 bg-sage-600 hover:bg-sage-700 text-white">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Demo
-                  </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full border-sage-300 text-sage-700 hover:bg-sage-50 bg-transparent"
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </Button>
+                  </a>
+
                 </div>
               </CardContent>
             </Card>
