@@ -21,7 +21,7 @@ export function Hero() {
             View My Work
           </Button>
           <a
-            href="/resume.pdf"
+            href="/Resume.pdf"
             download
             className="w-full sm:w-auto"
           >
