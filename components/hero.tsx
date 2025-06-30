@@ -20,13 +20,19 @@ export function Hero() {
           <Button size="lg" className="w-full sm:w-auto bg-sage-600 hover:bg-sage-700 text-white">
             View My Work
           </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="w-full sm:w-auto border-sage-300 text-sage-700 hover:bg-sage-50 bg-transparent"
+          <a
+            href="/resume.pdf"
+            download
+            className="w-full sm:w-auto"
           >
-            Download Resume
-          </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto border-sage-300 text-sage-700 hover:bg-sage-50 bg-transparent"
+            >
+              Download Resume
+            </Button>
+          </a>
         </div>
 
         <div className="flex justify-center space-x-6">
@@ -34,25 +40,25 @@ export function Hero() {
             <a
               href="https://github.com/k0irala"
               target="_blank">
-            <Github className="h-6 w-6" />
-            <span className="sr-only">GitHub</span>
+              <Github className="h-6 w-6" />
+              <span className="sr-only">GitHub</span>
             </a>
           </Button>
           <Button variant="ghost" size="icon" className="h-12 w-12 text-sage-600 hover:text-sage-800 hover:bg-sage-100">
             <a
               href="https://www.linkedin.com/in/gaurav-koirala-b4b8422a6/"
               target="_blank">
-            <Linkedin className="h-6 w-6" />
-            <span className="sr-only">LinkedIn</span>
+              <Linkedin className="h-6 w-6" />
+              <span className="sr-only">LinkedIn</span>
             </a>
           </Button>
           <Button variant="ghost" size="icon" className="h-12 w-12 text-sage-600 hover:text-sage-800 hover:bg-sage-100">
             <a
               href="mailto:k0iral.gaurav21@gmail.com"
               target="_blank">
-            <Mail className="h-6 w-6" />
-            <span className="sr-only">Email</span>
-            </a>  
+              <Mail className="h-6 w-6" />
+              <span className="sr-only">Email</span>
+            </a>
           </Button>
         </div>
       </div>
