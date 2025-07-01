@@ -6,26 +6,27 @@ export function Experience() {
     {
       title: "Backend Developer",
       company: "Global Square IT Company",
-      period: "2025 - Present",
+      period: "2025 June - Present",
       description:
         "Intern in backend development for high-traffic applications, focusing on performance optimization and system architecture. Implemented microservices using C and managed database systems.",
       achievements: [
-        "Improved system performance by 40% through code optimization",
-        "Led a team of 4 developers on critical infrastructure projects",
-        "Designed and implemented scalable API architecture",
+        "Assisted in developing and testing microservice modules under senior developer supervision",
+        "Helped design scalable API endpoints, following best practices for maintainability",
+        "Gained practical experience in optimizing SQL queries and monitoring database performance"
       ],
       technologies: ["C#", "SSMS", "Linux", "Redis"],
     },
     {
       title: "Backend Developer",
       company: "Giga InfoSoft",
-      period: "2024 - 2025",
+      period: "2024 December - 2025 January",
       description:
-        "Developed and maintained backend services for data processing applications. Worked extensively with C for performance-critical components and database optimization.",
+        "Developed and maintained backend services for data processing applications. Worked extensively with C# for performance-critical components and database optimization.",
       achievements: [
-        "Built real-time data processing pipeline handling 1M+ records/day",
-        "Reduced memory usage by 30% through efficient data structures",
-        "Implemented automated testing and CI/CD pipelines",
+        "Learned to build and test basic backend APIs using modern frameworks",
+        "Assisted with writing and debugging server-side code",
+        "Collaborated with senior developers to fix bugs and improve features",
+        "Gained hands-on experience working with databases and simple data models"
       ],
       technologies: ["C#", "SSMS", "Git"],
     },
