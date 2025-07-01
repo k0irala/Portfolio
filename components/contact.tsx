@@ -1,10 +1,69 @@
+"use client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react"
+  import { useState } from "react";
+import { toast } from "sonner";
 
 export function Contact() {
+  // if you use a toast lib, optional
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.email,
+          username: formData.firstName,
+          message: formData.message,
+          subject: formData.subject,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send email");
+      }
+
+      // optional toast
+      toast.success("Email sent successfully!");
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong sending your message.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 gradient-warm">
       <div className="container mx-auto max-w-6xl">
@@ -47,8 +106,8 @@ export function Contact() {
                     rel="noopener noreferrer"
                     aria-label="GitHub"
                   >
-                  <Github className="h-5 w-5" />
-                  <span className="sr-only">GitHub</span>
+                    <Github className="h-5 w-5" />
+                    <span className="sr-only">GitHub</span>
                   </a>
                 </Button>
                 <Button
@@ -62,11 +121,11 @@ export function Contact() {
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
                   >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
+                    <Linkedin className="h-5 w-5" />
+                    <span className="sr-only">LinkedIn</span>
                   </a>
                 </Button>
-               
+
               </div>
             </div>
           </div>
@@ -77,28 +136,64 @@ export function Contact() {
               <CardDescription>I'll get back to you as soon as possible</CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Input placeholder="First Name" />
+                    <Input
+                      placeholder="First Name"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                   <div>
-                    <Input placeholder="Last Name" />
+                    <Input
+                      placeholder="Last Name"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
                 </div>
                 <div>
-                  <Input type="email" placeholder="Email Address" />
+                  <Input
+                    type="email"
+                    placeholder="Email Address"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
                 <div>
-                  <Input placeholder="Subject" />
+                  <Input
+                    placeholder="Subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
-                  <Textarea placeholder="Your message..." className="min-h-[120px]" />
+                  <Textarea
+                    placeholder="Your message..."
+                    name="message"
+                    className="min-h-[120px]"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
-                <Button type="submit" className="w-full bg-sage-600 hover:bg-sage-700 text-white">
-                  Send Message
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-sage-600 hover:bg-sage-700 text-white"
+                >
+                  {loading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
+
             </CardContent>
           </Card>
         </div>
